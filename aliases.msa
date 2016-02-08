@@ -1,0 +1,10 @@
+#########################################
+# Copyright 2015 ASTIA Project All rights reserved.
+# Script by itstake (bexco2010@gmail.com)
+# This script is use in ASTIA only.
+#########################################
+
+*:/playclick = >>>
+#클릭 소리를 출력
+play_sound(ploc(player()), array(sound: CLICK), player())
+<<<
