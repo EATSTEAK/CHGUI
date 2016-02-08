@@ -1,7 +1,6 @@
 #########################################
-# Copyright 2015 ASTIA Project All rights reserved.
+# Copyright 2016 ITSTAKE GPL v2.0
 # Script by itstake (bexco2010@gmail.com)
-# This script is use in ASTIA only.
 #########################################
 
 bind('virtualchest_closed', null, null, @event,
