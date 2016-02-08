@@ -4,7 +4,7 @@ GUI Package for CommandHelper
 
 # How to Use It?
 
-Go to the [https://github.com/itstake/chgui/releases](releases) tab,
+Go to the [releases](https://github.com/itstake/chgui/releases) tab,
 
 And download latest version.
 
