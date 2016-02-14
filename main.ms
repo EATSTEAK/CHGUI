@@ -16,19 +16,11 @@ bind(inventory_click, null, null, @e,
     if(import('MenuOpen'.player())) { # Itemmenu is Open
         cancel() # Cancel Click
         @number = @e['rawslot']
-        	if(@e[clicktype] == 'LEFT') {
-        		try( execute(@array['menu'][@number]['left']), @ex,try( execute(@array['menu'][@number]['click']) ))
-        	} else if(@e[clicktype] == 'RIGHT') {
-        		try( execute(@array['menu'][@number]['right']), @ex,try( execute(@array['menu'][@number]['click']) ))
-        	} else if(@e[clicktype] == 'SHIFT_LEFT') {
-			try( execute(@array['menu'][@number]['shift_left']), @ex,try( execute(@array['menu'][@number]['click']) ))
-		} else if(@e[clicktype] == 'SHIFT_RIGHT') {
-        		try( execute(@array['menu'][@number]['shift_right']), @ex,try( execute(@array['menu'][@number]['click']) ))
-		} else if(@e[clicktype] == 'DROP') {
-			try( execute(@array['menu'][@number]['drop']), @ex,try( execute(@array['menu'][@number]['click']) ))
-		} else {
-			execute(@array['menu'][@number]['click']) # Execute closure, with try() in case you have an empty slot 
-        }                                      # or click an item out of your normal inventory
-		play_sound(ploc(@e[player]), array(sound: CLICK), @e[player])
+        	if(array_index_exists(@array['menu'][@number], to_lower(@e[clicktype]))) {
+        		execute(@array['menu'][@number][to_lower(@e[clicktype])])
+        	} else {
+        		execute(@array['menu'][@number]['click'])
+        	}
+	play_sound(ploc(@e[player]), array(sound: CLICK), @e[player])
     }
 )
