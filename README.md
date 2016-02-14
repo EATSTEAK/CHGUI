@@ -29,7 +29,7 @@ menu: array(
 array(
 #item: displayed item's info(ItemArray)
 item:array(type:1,data:0,qty:1),
-#<click type name here(in lower char)>: set closure of specifed click type. Supported click types: left, right, shift_left, shift_right, drop
+#<click type name here(in lower char)>: set closure of specifed click type. Supported click types: left, right, shift_left, shift_right, window_border_left, window_border_right, middle, number_key, double_click, drop, control_drop, creative or unknown
 left: closure(msg('left click')),
 #If click type is not specific, run click closure.
 click: closure(msg('normal click'))
