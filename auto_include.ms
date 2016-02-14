@@ -20,16 +20,8 @@ if(import('MenuOpen'.player()) != true) {
     @items = @array['menu']
     
     foreach(@key:@value in @items) {
-        if(!is_array(@value)) { 
-            if(@value == 'MSpecialItem') {
-                # Add custom code for an item with a specific name.
-            }
-            continue() # Any non array gets skipped so just add a random string to skip a slot
-        }
-        array_set(@value[0]['meta'], 'lore', split('\n', @value[0]['meta']['lore']))
-        # Split lore on newlines
         
-        array_set(@chest, @key, @value[0])
+        array_set(@chest, @key, @value['item'])
     }
     
     create_virtualchest(@chest)
@@ -55,16 +47,7 @@ proc(_itemmenu_update, @array,
 		}
     )
     foreach(@key:@value in @items) {
-        if(!is_array(@value)) { 
-            if(@value == 'MSpecialItem') {
-                # Add custom code for an item with a specific name.
-            }
-            continue() # Any non array gets skipped so just add a random string to skip a slot
-        }
-        array_set(@value[0]['meta'], 'lore', split('\n', @value[0]['meta']['lore']))
-        # Split lore on newlines
-        
-        array_set(@chest, @key, @value[0])
+        array_set(@chest, @key, @value['item'])
     }
 	msg(@chest)
     create_virtualchest(@chest)
